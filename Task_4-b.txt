@@ -1,0 +1,21 @@
+
+An API (Application Programming Interface) is a computer interface that allows communication and data exchange between two separate software systems. A software system that implements an API contains several functions/subroutines that another software system can execute. An API defines the requests that can be made between two software systems, how the requests are made, the data formats that can be used, and so on. API testing is a type of software testing that validates application programming interfaces (APIs). The purpose of API testing is to verify the functionality, reliability, performance, and security of programming interfaces. API tests use software to call APIs, capture output, and record system responses instead of using standard user (keyboard) input and output. API tests are very different from GUI tests in that they don't focus on the appearance of your application. It primarily focuses on the business logic layer of the software architecture. API testing is a type of software testing that analyzes application program interfaces (APIs) to ensure that they meet expected functionality, security, performance, and reliability. Tests are run directly on the API or as part of integration tests. An API is middleware code that allows two software programs to communicate with each other. This code also specifies how the application provides services from the operating system (OS). or any other application.
+Applications often have three layers. The data layer, the service layer (API layer), and the presentation layer (user interface (UI) layer). An application's business logic, which guides how users interact with the services, functions, and data in your app, resides in the API layer. API testing focuses on analyzing the business logic and security of your application and data responses. API testing is typically performed by sending requests to one or more API endpoints and comparing the responses to expected results.
+
+Here is a example from my work
+
+import requests
+import json
+import jsonpath
+
+url = "http://localhost:3000/api/collection/"
+header = {'Content-Type': 'application/json', 'X-Metabase-Session': '82f2696e-58f8-477a-8ef3-c6c762c91746'}
+
+
+def testPostCollection():
+    f = open('collection_data.json', 'r')
+    # json_input = f.read()
+    json_request = json.loads(f.read())
+    response = requests.post(url, json=json_request, headers=header)
+
+    assert response.status_code == 200

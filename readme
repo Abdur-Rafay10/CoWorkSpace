@@ -1,0 +1,6 @@
+I decided to go with METABASE, So i asked other groups working on metabase and got required information to get started working. I installed the required softwares and got caught in many erros which took 2 days to resolve
+softwares were , pycharm , python , behave , selenium libraries , metabse jar files etc
+For the ui testing i decided to test the scenario that user successfully creates a collection
+It was fun doing this ui testing and watching automted work.
+I had written scenario of create collection , so i decided to do API testing on posting on new collection.
+I installed pytest , request , jsonpath libraries etc .

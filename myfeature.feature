@@ -1,24 +1,30 @@
-Feature: add new Collection
-    Scenario Outline: User successfully creates a new collection
-      Given I launch chrome browser
-      And  open metabase website
-      And I am logged in my metabase account
-      When I click on personal account option
-      Then personal collection page opens
-      When I click on create new button
-      Then a menu is displayed
-      When I click on collection
-      Then a collection box is opened
-     When I enter collection name "<name>"
-      And enter description "<description>"
-     Then create button is "<enable>" enabled
-     And select a location
-      And click on create button
-      Then it creates a new collection page with entered name
+Feature:ChangeNameFeature
+  Scenario Outline: Admin is able to edit profile
+   Given Chrome Browser is launched and the URL for Metabase
+   Given The URL http: // localhost: 3000 / is in Use
+   And I shall be Logged in as Admin User
+   When I click on settings button
+   Then settings open
+   When I click on account settings button
+   Then account settings open
+   When I click on profile button
+   Then profile settings open
+    When I enter new first name "<firstname>"
+   Then update "<update>" button is enabled
+    And I enter new last name "<lastname>"
+   Then update "<update>" button is enabled
+    And I enter new email "<email>"
+   Then update "<update>" button is enabled
+    And I set language "<language>"
+   Then update "<update>" button is enabled
+   When I press update  button
+    Then profile is updated
 
-      Examples:
-      | name       | description                            | enable |
-      | "Demo1"    | "this is description for demo1 "       | yes    |
-      | "Demo2"    | " "                                    | yes    |
-      | ""         | "collection with no name "             | No     |
-      | ""         | " "                                    | No     |
+    Examples:
+      | firstname       | lastname      | email                     |   language  |  update  |
+      | Abdur           |rafay          | l201391@lhr.nu.edu,pk     |    default  |   yes    |
+      | muhammad        | rafay         | l201391@lhr.nu.edu,pk    |    default  |   yes    |
+      | Abdur           | muhammad      | l201391@lhr.nu.edu,pk     |    default  |   yes    |
+      | Abdur           | rafay         | l201392@lhr.nu.edu,pk     |    default  |   yes    |
+      | Abdur           | rafay         | l201391@lhr.nu.edu,pk     |    chinese  |   yes    |
+      | " "             | " "           | " "                       |    default  |   no     |

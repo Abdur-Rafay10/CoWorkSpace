@@ -1,0 +1,6 @@
+Starting from UI testing I decided to use pycharm for testing after discussion with my team mates.
+I first learned how to install and use and setup pycharm.
+Then i created the required gherkins and UI test files and learnt how to write gherkin code and attach it with the test automation file.
+I went through the different processes of finding the path e.g Xpath,CSS selector,by class name ,by id and etc.
+all of this eemed difficult in the start but as I learned new things and understood the use it got easy with time.
+Overall it was a good learning experience which included both failures and success.

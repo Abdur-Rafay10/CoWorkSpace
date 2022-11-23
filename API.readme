@@ -1,0 +1,6 @@
+the basic fucntion of API testing is to check the functionality,performance reliability and security of the interfaces.
+An API is different from UI as it basically deals with the actual logic of the programming interface rather than dealing with the graphics or look and feel of the program.
+An API Generated a communication and data exchange path between two different software systems.
+An API defines requests and how requests can be made and the different data forms that can be used.
+It incloves two steps,one is to set up a toll to drive an API and the other is to write the code to test for the API
+its output can include any type of data or a true false return say pass or fail and a call to another function as well.

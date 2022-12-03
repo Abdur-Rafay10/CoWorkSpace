@@ -1,0 +1,188 @@
+20L0943
+Saadan Khokhar 
+SQE Assignment 3 
+
+Architectural and Component level modularity requirements 
+Micro Services 
+The micro service architecture enables the rapid, frequent and reliable delivery of large, complex applications. It also enables an organization to evolve its technology stack.
+Micro services architecture is a concept of building an application based on breaking it into multiple modules. Each module has its own specific responsibilities but communicates with others to form a unified system. This approach provides freedom of development and choice of tools (technology language, framework) within each application.
+
+The right way to deploy applications is in containers. Briefly, a container is a miniature virtual server packed with the software required to run an application. The container pack is small, smart, and easy to deploy and maintain. And deploying your application in a container is clever. You can deploy as many instances as you need and scale up or down as needed to meet the current load.
+https://i.imgur.com/ELcmMjy.png)
+Micro Services Example in Vue StoreFront Code
+https://i.imgur.com/gEN73AD.png
+
+Vue StoreFront has micro services requirements as they divided the services in many micro ones. To manage the increase and decrease of components and distribute the requests effectively
+
+
+Modular Folder Structure
+This structure is interesting for projects with a larger scale. The main idea is that each module we define has all the code related to it and only code from the module itself is imported. When we have several modules that need the same piece of code, we can write it into a shared folder and import it into the different modules. The fundamental rule to be followed is not to import code between modules. However, the great drawback of this structure is that it can be complex to define what a module is and this can have a great impact on the success of our organization. 
+
+Every project has its own requirements and each team has its own way of working, so this is not THE guide on how to structure your Vue project; it’s more of a source of ideas and good practices that you can follow to improve your code maintainability. Model based is not a file based system
+When starting a new Vue project, the easiest way to go is vuecli project structure, which somehow forces you to group your files by type: components, services, helpers with a few odd exceptions, such as the router and the store. This structure is not wrong — for small applications, it’s very easy to maintain, but for midsize/large applications there are a few downsides:
+ The source code navigation is not simple: imagine the amount of files inside the components folder, and knowing the purpose of each one — same for any other file type
+ Debugging can be very time-consuming: you’d need to jump filetofile and draw a mental map of how a simple process works to get to the root cause of a bug.
+A better alternative is to structure your project using old-fashioned modules and to think of each module as a small VUECLI project, decreasing the downsides explained above, so you get something like this:
+https://i.imgur.com/tln2Yys.png)
+
+As described on the Introduction to Vue Storefront page, Vue Storefront is just a Nuxt.js project under the hood. For this reason, our project structure inherits from Nuxt.js but has some additional files.
+•	.nuxt is a dynamically generated build directory. You should not manually modify it, nor synchronize it using version control like GIT.
+•	components contains Vue.js components used on different pages or parts of your application. You can import these components from pages, layouts, and other components.
+•	lang contains translations for your application. Available locales are configured in the nuxt.config.js file.
+
+
+Class Components
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML via a render () function. Components come in two types, Class components and Function components. Class component is instantiated and a different life cycle method is kept alive and being run and invoked depending on the phase of the class component. Moreover, React lifecycle methods can be used inside class components (for example, componentDidMount). It requires different syntax inside a class component to implement hooks. Constructors are used as it needs to store state. 
+Example: constructor(props) {   super(props); this.state = {name: ‘ ‘}}
+
+Vue StoreFront is doing each functionality in a separate module and whenever they need that module to be there they just simply "import" that module.
+
+ Example:
+https://i.imgur.com/HnZcfKJ.png)
+
+Reusability
+Components are usually designed to be reused in different situations in different applications. However, some components may be designed for a specifi–c task. Reusability is the use of existing assets in some form within the software product development process; these assets are products and byproducts of the software development life cycle and include code, software components, test suites, designs and documentation.
+
+
+Extensibility
+Most projects need to extend the base of the framework to meet their needs, be it with a ready to use or a custom plugin. Well-thought-out extensions or plugins system enables flexibility to meet the demands of the most, even very diverse projects. A component can be extended from existing components to provide new behavior. Extensibility is a measure of the ability to extend a system and the level of effort required to implement the extension. Extensions can be through the addition of new functionality or through modification of existing functionality. First, you should consider which part of the application you need to extend frontend, backend. Depending on your needs, you can need to extend:
+•	Vue,js
+•	Nuxt,js
+•	Middleware
+
+To extend it we use plugins. Plugins allow adding global level functionalities to Vue.js, such as components, methods, helpers, or directives. These mainly extend the frontend portion of the application and can be divided into two categories:
+
+•	UI plugins
+•	NonUI plugins
+
+Vue.js UI plugins
+UI plugins extend how the application looks or behaves on user interactions. They include plugins that add support for:
+•	Event handling.
+•	Responsive design, resizing, scrolling, and animations.
+•	Handling forms and validation.
+•	Routing, lazy loading, lazy hydration, meta tags.
+
+Vue.js nonUI plugins
+NonUI plugins extend how the application works under the hood or handles state and storage. Non UI plugins are all the extensions that are not for the user interface or the interaction with the User such as :-
+•	Making HTTP requests.
+•	Internationalization (i18n).
+•	Custom events.
+•	Storage
+•	State management.
+
+
+Linters for better code quality
+A code linter is a tool that automatically checks your code to see if it meets your project’s or company’s coding convention. If it doesn’t match the convention, linters will show these errors as warnings. During software development, these warnings tend to get overlooked when developers prioritize speed over quality. But these small errors can accumulate fast in a short amount of time, leading to a significant workload for your team. To avoid these hefty workloads, linters identify these errors quickly so that your team can resolve them quickly, too.
+
+
+
+Performance Optimization
+Performance optimization, also known as “performance tuning”, is usually an iterative approach to making and then monitoring modifications to an application and its database. It could involve adjusting the configuration of the database and server, or making changes to the applications and the SQL that maintain and query the database. Number of users 
+●	Complexity of the application and the SQL
+●	Volatility of the data
+●	DBMS and server platform.
+Declare preload links in your HTML to instruct the browser to download key resources as soon as possible. This is achieved by 
+
+•	Reducing third party usage
+•	Eliminate Render blocking resources
+•	Minimize the JS and CSS so that load time is less
+•	// nuxt.config.js
+•	
+•	export default {
+•	  buildModules: [
+•	    ['@vue-storefront/nuxt', {
+•	      performance: {
+•	        purgeCSS: {
+•	          enabled: true,
+•	          paths: [
+•	            '**/*.vue'
+•	          ]
+•	        }
+•	      }
+•	    }]
+•	  ]
+•	};
+•	
+•	Image handling 
+•	<img src="cat-large.jpg" srcset="cat-small.jpg 480w, cat-large.jpg 1080w" sizes="50vw">
+•	Reduce Exec time
+
+Usage of Cache 
+Cache is memory placed in between the processor and main memory. Cache is responsible for holding copies of main memory data for faster retrieval by the processor. Cache memory is important because it improves the efficiency of data retrieval. 
+The most frequently visited pages are embedded with Cache so that they don’t have to reload every time someone visits it, The pages that are cached are
+•	Home page with vhome tag
+•	Category page with Vcategory tag 
+•	Tags for products P$(prod.id) and C$(cat.id)
+•	Product page with the Vproduct-${route.value.params.id} tag and tags for the main
+•	P${prod._id} as well as related products P${prod._id} and categories C${cat.id}
+•	Tags are invalidated also using the invalidation endpoints .inv
+•	key — string matching the VSF_REDIS_CACHE_INVALIDATE_KEY key in the .env file.
+•	tags — a comma-separated list of tags for invalidation.
+
+Usage of Content Delivery Network 
+To minimize the distance between the visitors and your website's server, a CDN stores a cached version of its content in multiple geographical locations (a.k.a., points of presence, or PoPs). 
+
+Usage of Lazy Loading in web and asset workflows in games
+Lazy loading is a technique for waiting to load certain parts of a webpage — especially images — until they are needed. Instead of loading everything all at once, known as "eager" loading, the browser does not request certain resources until the user interacts in such a way that the resources are needed. The advantages of lazy loading are as follows:
+Lazy loading is a technique used to prevent or delay the loading of non-critical resources until they are needed. You can use this mechanism for different types of resources, but in the case of images, our goal is to lazily load everything that is not visible to the user within the initial viewport. All other images can be loaded when the user scrolls down the page.
+Use the loading="lazy" attribute to load an image lazily. It also works for the <nuxt-img> component.
+
+Using the <nuxt-img> (opens new window)component from the @nuxt/image (opens new window)package is likely the single best thing you can do to stop worrying about images. It offers features for most of the things mentioned in the following sections. Using most of them only requires you to pass a single attribute.
+It offers image resizing, converting formats, preloading, and integrations with the most popular image transformation services.
+<nuxt-img
+  src="/hero-image.png"
+  format="webp"
+  quality="80"
+  width="200"
+  height="100"
+  loading="lazy"
+/>
+If you have just a few static images on your website, you can manually compress them using a website like Squoosh.app (opens new window). 
+
+Faster page load: All else being equal, webpages with smaller file sizes load faster. With lazy loading, a web page starts off smaller than its full size and thus loads faster. Speedy web performance has numerous benefits, including better SEO, higher conversion rates, and an improved user experience.
+
+No unnecessary content: Suppose a page loads multiple below-the-fold images but the user exits the page before scrolling down. In such a case, the bandwidth used to deliver the images and the browser's time spent requesting and rendering the images were essentially wasted. In contrast, lazy loading ensures that these images only load when necessary. This saves time and processing power, and it may save money for the website owner because less bandwidth is used.
+
+Usage of PWA
+Progressive Web Application (PWA) is a web standard that uses design patterns and advanced technologies to deliver a fast and reliable experience to users on both mobile and desktop devices. It can work on any platform using standard-compliant browsers with the aims to: Increase customer engagement. 
+With PWAs you can build one website that functions as an iOS and Android application. This saves the cost and complexity of building a separate experience of iOS and Android, while giving users the best functionality regardless of how they are accessing the content. Because a progressive web app is lightweight and doesn't put a lot of demand on a device's resources, it loads pages fast. Therefore, people will spend more time on your webpage. 
+PWA is 
+•	Reliable 
+•	Fast Loading 
+•	Engaging
+•	Cost effective 
+•	Better SEO results
+•	Lower Bounce Rates
+•	PWA leverages the power of headless commerce
+•	Boost engagement 
+
+Service workers and local storage 
+Service worker may refer to: Social service worker, a person engaged in social work. Pink-collar worker, a person in the service industry whose labor is related to customer interaction, entertainment, sales or other service-oriented work. 
+import { ActionTree } from 'vuex'
+import * as types from './mutation-types'
+import RootState from '@vue-storefront/core/types/RootState'
+import WishlistState from '../types/WishlistState'
+import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
+
+const actions: ActionTree<WishlistState, RootState> = {
+  clear (context) {
+    context.commit(types.WISH_DEL_ALL_ITEMS, [])
+  },
+  async load ({ commit, getters, dispatch }, force: boolean = false) {
+    if (!force && getters.isWishlistLoaded) return
+    commit(types.SET_WISHLIST_LOADED)
+    const storedItems = await dispatch('loadFromCache')
+    commit(types.WISH_LOAD_WISH, storedItems)
+  },
+  loadFromCache () {
+    const wishlistStorage = StorageManager.get('wishlist')
+    return wishlistStorage.getItem('current-wishlist')
+  },
+
+Create your own wishlist or storage. Create your own module src/module
+
+LocalStorage or IndexedDB (depending on browser support, abstracted with LocalForage library) are mainly used for storing user-based data like cart, login token, made orders, personal data, other choices (like favorite products).
+The Service Workers cache works like we're consistently executing the backend requests to invalidate the local cache. It's the NetworkFirst mode. That means there is virtually no risk of stale / non-invalidated data served from the local cache
+Whenever it's possible, the service worker cache is in use. For easier service worker cache management, Google provided Workbox is in use.
+Service worker cache is used mainly for catalog (category, product, and attribute list and detail) and CMS (pages, blocks, banners). 
+

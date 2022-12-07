@@ -1,0 +1,26 @@
+1. Performance Requirements
+1.1 - The system's performance shall have criteria included the condition that the attendance upload should not take too long.
+
+1.2 - It shall take around 5 to 10 seconds for the system to generate attendance reports
+
+1.3 - The system  shall be able to detect feature within 5 seconds and make it  be visible to in 4 to 5 seconds.
+1.4- The system shall also be able to provide instruction for any posture on either side, regardless of whether the user is left- or right-handed.
+
+2. Safety Requirements
+2.1- The system shall have a backup every two hours to avoid any data loss
+
+2.2- The system shall beequiped with modern cameras for better display and quick access
+
+2.3- The system shall be able to detect any twins or multiple attendance of the same person 
+
+3. Security Requirements
+3.1- The system shall maintain a data log for any admin that access the system and keep a record for them to avoid data breach
+
+3.2- The system shall be protected using modern firewall so no one can breach the system
+
+4. Other Requirments 
+4.1 The application shall keep all the data backed up in a cloud server and the data shall be loaded within 20 minutes in case of an data loss
+
+4.2 The system shall automatically shut down in case of a system breach 
+
+4.3 The application shall not allow any one other than the admin to access the portal

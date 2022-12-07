@@ -143,6 +143,15 @@ Faster page load: All else being equal, webpages with smaller file sizes load fa
 
 No unnecessary content: Suppose a page loads multiple below-the-fold images but the user exits the page before scrolling down. In such a case, the bandwidth used to deliver the images and the browser's time spent requesting and rendering the images were essentially wasted. In contrast, lazy loading ensures that these images only load when necessary. This saves time and processing power, and it may save money for the website owner because less bandwidth is used.
 
+Vue Storefront is also equipped with the core or Vitals of the Web such as 
+CLS (Cummulative Load Shift)
+FID (First Input Delay)
+LCP (Largest Contentful Pane)
+
+there is serverside rendering and client side rendering as well
+
+
+
 Usage of PWA
 Progressive Web Application (PWA) is a web standard that uses design patterns and advanced technologies to deliver a fast and reliable experience to users on both mobile and desktop devices. It can work on any platform using standard-compliant browsers with the aims to: Increase customer engagement. 
 With PWAs you can build one website that functions as an iOS and Android application. This saves the cost and complexity of building a separate experience of iOS and Android, while giving users the best functionality regardless of how they are accessing the content. Because a progressive web app is lightweight and doesn't put a lot of demand on a device's resources, it loads pages fast. Therefore, people will spend more time on your webpage. 

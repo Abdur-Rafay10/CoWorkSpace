@@ -1,0 +1,57 @@
+(FINAL PROJECT)
+
+Project name: PAY NOW
+
+ 
+
+ 
+
+ 
+
+Introduction:
+
+This project involves building an application that will allow multiple platform transections. It covers areas like small businesses, banking and finance. We can perform transactions to any platform in the world. You can get loans from the system and pay utility and government bills. The application will be named as “PayNow”, it will be a combination of hardware and software that will provide an escape from tedious tasks of transactions , like if you want to send money to a platform that requires indirect path , for example you have to send money to one platform then other and then to the one required. It also takes 2 to 3 days processing time. This will greatly ease the transactions around the globe. Voucher will be given to the users, who regularly use the application and perform cross country transactions, the requirements will be shared on the application and will be updated with time.
+
+ 
+
+Product Functions The major functions that the system must perform are:
+
+● Transaction to any platform
+
+● Get Loans
+
+● Utility Bills
+
+● Discount vouchers on usual usage of application
+
+Performance Requirements: The performance of the system includes Transection time and workload. “The system should respond to each request in less than 500 milliseconds.” “The system should show 80% performance even when the 1500 users access the system simultaneously.” The system should perform transection within 30 seconds and in case of any error the amount should be returned to user account
+
+Security Requirements: The system will ensure that only user with correct credentials will use his account, there will be no chance of hacking and cheats. The user can apply two factor authentication that will enhance the security. The user will also confirm his password before confirming the transaction. If someone is applying for a loan. There will be a call from staff to user to confirm that the correct user is getting the loan, to confirm any other person is not using his account. The mobile camera will take a picture and store it in database if someone enters wrong pin as well.
+
+Testing Requirements: In general, testing is finding out how well something works. In computer hardware and software development, testing is used at key checkpoints in the overall process to determine whether objectives are being met. Software testing is the process of evaluating a software item to detect differences between given input and expected output. Testing Objectives: This SMS does not have to be perfect; it only needs to meet the requirements and expectations of the intended customers. Test Environment: We created a separate test environment from the development and production environments. Usability Testing During usability testing, we shall examine the aspects of the web application that may affect the user’s experience, such as: • How simple is it to navigate through the application? • Is the web application’s look and feel consistent from page to page, including font sizes and colors? The desired SMS must function properly in all browsers. Unit testing Unit testing is the testing of an individual unit or group of related units. It is concerned with verifying small portions of functionality. The system shall have all the links and functions operational. Testing for user acceptance By performing user acceptance testing, we ensure that our web application is fit for the purpose for which it was designed. Integration Testing Integration testing is testing in which a group of components are combined to produce output. Functional Testing Functional testing ensures that the functionality specified in the system requirements is operational. System Testing System testing is the testing to ensure that by putting the software in different environments (e.g., operating systems), it still works. Stress Testing Stress testing is the testing to evaluate how a system behaves under unfavorable conditions. Regression Testing Regression testing is the testing after modification of a system, component, or group of related units to ensure that the modification is working correctly and is not damaging or imposing on other modules to produce unexpected results. Beta Testing Beta testing is the testing which is done by end users, a team outside development, or publicly releasing the full pre-version of the product, which is known as the beta version.
+
+Hardware: This application is designed for all people so we will make sure the system will work in small devices as well ( devices with low specifications). But it will not support those devices that not allow new updates of common things like google services etc.
+
+Documentation Requirement: The application shall provide help and user manuals to provide the full details of the functionality of the system. The shall use managerial language so that it can be understandable by a non-technical person as well. A video guide will be also available of every feature. Documents that will be required for this project are:
+
+● User Manual
+
+● Online-help Desk
+
+● Citation information
+
+● Information for contributors
+
+● License Information  
+
+● List all version of this project with information as updated
+
+ 
+
+Reusability Requirements: The system shall be designed in such a way that its modules can be used in other applications. Especially in different Transection platforms”
+
+Modularity Requirements: The SMS shall have relatively independent and single function parts that are put together to make a complete system.” Thus, as a result of this modular approach the system, in spite of being robust, is not cumbersome. It also contributes to the fast execution of the system.
+
+Some Other Requirements The system shall operate on a system capable of near real time execution of instructions. The system shall operate on a system capable of multi-processing. The SMS shall have a database associated with it that can handle records transaction processing at a rate of one thousand transactions per minute. The SMS shall perform periodic backups of all data weekly.”
+Process Requirements: The system must be built on the documented expectations, targets and specifications for business processes. They may be collected from multiple groups of stakeholders such as business units, customers, internal customers, users and subject matter experts. For example ,it is important to know what the users of this application or software want and what their expectations are so that its easier to create a software that meets the needs of its users.
+Reliability Requirements: The system should be reliable. Reliability requirements define system and software functions that avoid, detect or tolerate faults in the software and so ensure that these faults do not lead to system failure. Reliability is a measurable system attribute so non-functional reliability requirements may be specified quantitatively. So, our system should be able to provide functionality even in the case of a component failure and it should not halt its operations in case a failure occurs.
